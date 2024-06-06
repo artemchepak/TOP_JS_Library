@@ -31,9 +31,18 @@ function addBookToLibrary() {
 };
 
 function updateTable() {
-    let newRow = table.insertRow();
-    let element = myLibrary.slice(-1)[0];
-    newRow.innerHTML = `<th scope="row">${myLibrary.indexOf(element) + 1}</th><td>${element.title}</td><td>${element.author}</td><td>${element.pages}</td><td>${element.status}</td>`;
+    table.innerHTML = '';
+
+    myLibrary.forEach((book, index) => {
+        const newRow = table.insertRow();
+        newRow.innerHTML = `
+            <th scope="row">${index + 1}</th>
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.pages}</td>
+            <td>${book.status}</td>
+        `;
+    });
 }
 
 function clearForm() {
