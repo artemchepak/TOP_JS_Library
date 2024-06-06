@@ -27,12 +27,20 @@ function addBookToLibrary() {
     let newBook = new Book(title, author, pages, status);
     myLibrary.push(newBook);
     updateTable();
+    clearForm();
 };
 
 function updateTable() {
     let newRow = table.insertRow();
     let element = myLibrary.slice(-1)[0];
     newRow.innerHTML = `<th scope="row">${myLibrary.indexOf(element) + 1}</th><td>${element.title}</td><td>${element.author}</td><td>${element.pages}</td><td>${element.status}</td>`;
+}
+
+function clearForm() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
+    document.querySelector('#status').value = '';
 }
 
 btn.addEventListener('click', function () {
