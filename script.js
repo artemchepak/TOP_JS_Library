@@ -1,5 +1,7 @@
 const myLibrary = [];
 const table = document.querySelector('#table-body');
+const bookModal = document.querySelector('#bookModal');
+const btn = document.querySelector('#btn');
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -26,3 +28,7 @@ myLibrary.forEach(element => {
     let newRow = table.insertRow();
     newRow.innerHTML = `<th scope="row">${myLibrary.indexOf(element) + 1}</th><td>${element.title}</td><td>${element.author}</td><td>${element.pages}</td><td>${element.status}</td>`;
 });
+
+// btn.addEventListener('click', function(){
+//     bookModal.style.display = 'none';
+// });
