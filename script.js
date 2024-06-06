@@ -18,6 +18,12 @@ function addBookToLibrary() {
     let author = document.querySelector('#author').value;
     let pages = document.querySelector('#pages').value;
     let status = document.querySelector('#status').value;
+
+    if (!title || !author || !pages || !status) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
     let newBook = new Book(title, author, pages, status);
     myLibrary.push(newBook);
     updateTable();
