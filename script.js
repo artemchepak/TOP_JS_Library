@@ -52,4 +52,6 @@ function clearForm() {
     document.querySelector('#status').value = '';
 }
 
-btn.addEventListener('click', addBookToLibrary());
+btn.addEventListener('click', function () {
+    addBookToLibrary();
+});
